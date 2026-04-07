@@ -6,7 +6,6 @@
 // (Copy this file to rust/examples/demo.rs)
 
 use robustmq::mq9::{MQ9Client, Priority};
-use std::sync::{Arc, Mutex};
 use tokio::time::{sleep, Duration};
 
 #[tokio::main]
