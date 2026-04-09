@@ -7,7 +7,7 @@
  *   npm start
  */
 
-const { MQ9Client } = require("@robustmq/mq9");
+const { MQ9Client } = require("@robustmq/sdk/mq9");
 
 async function main() {
   const client = new MQ9Client({ server: "nats://localhost:4222" });

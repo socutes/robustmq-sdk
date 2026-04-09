@@ -34,12 +34,12 @@ Full spec: [docs/mq9-protocol.md](docs/mq9-protocol.md)
 
 | Language | Package | Version | Install |
 |----------|---------|---------|---------|
-| Python | `robustmq-mq9` | 0.3.5 | `pip install robustmq-mq9` |
+| Python | `robustmq` | 0.3.5 | `pip install robustmq` |
 | Go | `github.com/robustmq/robustmq-sdk/go` | v0.3.5 | `go get github.com/robustmq/robustmq-sdk/go` |
-| JavaScript | `@robustmq/mq9` | 0.3.5 | `npm install @robustmq/mq9` |
+| JavaScript | `@robustmq/sdk` | 0.3.5 | `npm install @robustmq/sdk` |
 | Java | `com.robustmq:robustmq-sdk` | 0.3.5 | Maven / Gradle (see below) |
 | Rust | `robustmq` | 0.3.5 | `cargo add robustmq` |
-| C# | `RobustMQ.Mq9` | 0.3.5 | `dotnet add package RobustMQ.Mq9` |
+| C# | `RobustMQ` | 0.3.5 | `dotnet add package RobustMQ` |
 
 ---
 
@@ -47,7 +47,7 @@ Full spec: [docs/mq9-protocol.md](docs/mq9-protocol.md)
 
 **Python**
 ```bash
-pip install robustmq-mq9
+pip install robustmq
 ```
 ```python
 from robustmq.mq9 import Client, Priority
@@ -77,10 +77,10 @@ c.Send(mailbox.MailID, []byte("hello"), mq9.Normal)
 
 **JavaScript / TypeScript**
 ```bash
-npm install @robustmq/mq9
+npm install @robustmq/sdk
 ```
 ```typescript
-import { MQ9Client } from "@robustmq/mq9";
+import { MQ9Client } from "@robustmq/sdk/mq9";
 
 const client = new MQ9Client({ server: "nats://localhost:4222" });
 await client.connect();
@@ -126,7 +126,7 @@ client.send(&mailbox.mail_id, b"hello", Priority::Normal).await?;
 
 **C#**
 ```bash
-dotnet add package RobustMQ.Mq9
+dotnet add package RobustMQ
 ```
 ```csharp
 using RobustMQ.Mq9;

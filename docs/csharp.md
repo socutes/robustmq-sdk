@@ -1,12 +1,12 @@
 # C# SDK
 
-**Package:** `RobustMQ.Mq9`  
+**Package:** `RobustMQ`  
 **Requires:** .NET 8+, `NATS.Net`
 
 ## Install
 
 ```bash
-dotnet add package RobustMQ.Mq9
+dotnet add package RobustMQ
 ```
 
 ## Quick start

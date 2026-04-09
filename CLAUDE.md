@@ -25,17 +25,17 @@ will be added as RobustMQ matures.
 Each language ships one package that grows to cover all protocols via sub-modules.
 Users install one package and import the protocol they need.
 
-| Language   | Published package       | mq9 import path        |
-| ---------- | ----------------------- | ---------------------- |
-| Python     | `robustmq` (PyPI)       | `from robustmq.mq9 import Client` |
-| Go         | `robustmq-sdk/go`       | `import ".../mq9"`     |
-| JavaScript | `@robustmq/sdk` (npm)   | `import { mq9 } from '@robustmq/sdk'` |
-| Java       | `com.robustmq:robustmq-sdk` | `import com.robustmq.mq9.*` |
-| Rust       | `robustmq` (crates.io)  | `robustmq::mq9`        |
-| C#         | `RobustMQ.SDK` (NuGet)  | `using RobustMQ.Mq9`   |
+| Language   | Published package            | mq9 import/usage                              |
+| ---------- | ---------------------------- | --------------------------------------------- |
+| Python     | `robustmq` (PyPI)            | `from robustmq.mq9 import Client`             |
+| Go         | `robustmq-sdk/go` (git tag)  | `import "github.com/robustmq/robustmq-sdk/go/mq9"` |
+| JavaScript | `@robustmq/sdk` (npm)        | `import { MQ9Client } from '@robustmq/sdk/mq9'` |
+| Java       | `com.robustmq:robustmq-sdk`  | `import com.robustmq.mq9.*`                   |
+| Rust       | `robustmq` (crates.io)       | `use robustmq::mq9::MQ9Client`                |
+| C#         | `RobustMQ` (NuGet)           | `using RobustMQ.Mq9`                          |
 
-> **Note**: Current published package names (`robustmq-mq9`, `@robustmq/mq9`, `RobustMQ.Mq9`) reflect the
-> initial mq9-only release. Migration to the single-SDK naming above is planned for a future version.
+When new protocols are added (e.g. MQTT, Kafka), they live in sub-modules of the same package:
+`robustmq.mqtt`, `@robustmq/sdk/mqtt`, `com.robustmq.mqtt`, `robustmq::mqtt`, etc.
 
 The owner does not intervene in implementation details. Claude makes all technical decisions
 and drives the project forward autonomously.
@@ -66,9 +66,9 @@ Also update version references in `demo/`, `docs/`, and `README.md`.
 | Python     | `robustmq.mq9`          | `MQ9Client` | `nats-py`    | Implemented    |
 | Rust       | `robustmq::mq9`         | `MQ9Client` | `async-nats` | Scaffolded     |
 | Go         | `mq9` (pkg)             | `MQ9Client` | `nats.go`    | Scaffolded     |
-| JavaScript | `@robustmq/mq9`         | `MQ9Client` | `nats` v2    | Scaffolded     |
+| JavaScript | `@robustmq/sdk/mq9`     | `MQ9Client` | `nats` v2    | Scaffolded     |
 | Java       | `com.robustmq.mq9`      | `MQ9Client` | `jnats`      | Scaffolded     |
-| C#         | `RobustMQ.Mq9`          | `MQ9Client` | `NATS.Net`   | Scaffolded     |
+| C#         | `RobustMQ.Mq9` (ns)     | `MQ9Client` | `NATS.Net`   | Scaffolded     |
 
 Go constructor convention: `NewMQ9Client(...)` (struct, not class).
 

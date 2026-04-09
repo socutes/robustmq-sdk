@@ -1,18 +1,18 @@
 # JavaScript / TypeScript SDK
 
-**Package:** `@robustmq/mq9`  
+**Package:** `@robustmq/sdk`  
 **Requires:** Node.js 18+, `nats` v2
 
 ## Install
 
 ```bash
-npm install @robustmq/mq9
+npm install @robustmq/sdk
 ```
 
 ## Quick start
 
 ```typescript
-import { MQ9Client } from "@robustmq/mq9";
+import { MQ9Client } from "@robustmq/sdk/mq9";
 
 const client = new MQ9Client({ server: "nats://localhost:4222" });
 await client.connect();
