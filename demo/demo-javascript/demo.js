@@ -1,5 +1,5 @@
 /**
- * mq9 JavaScript demo — connects to nats://localhost:4222 and runs the full scenario.
+ * mq9 JavaScript demo — connects to nats://demo.robustmq.com:4222 and runs the full scenario.
  *
  * Run:
  *   cd demo/demo-javascript
@@ -10,7 +10,7 @@
 const { MQ9Client } = require("@robustmq/sdk/mq9");
 
 async function main() {
-  const client = new MQ9Client({ server: "nats://localhost:4222" });
+  const client = new MQ9Client({ server: "nats://demo.robustmq.com:4222" });
   await client.connect();
   console.log("[js] connected");
 

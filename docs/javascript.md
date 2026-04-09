@@ -14,7 +14,7 @@ npm install @robustmq/sdk
 ```typescript
 import { MQ9Client } from "@robustmq/sdk/mq9";
 
-const client = new MQ9Client({ server: "nats://localhost:4222" });
+const client = new MQ9Client({ server: "nats://demo.robustmq.com:4222" });
 await client.connect();
 
 // Create mailbox

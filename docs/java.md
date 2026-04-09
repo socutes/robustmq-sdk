@@ -19,7 +19,7 @@
 import com.robustmq.mq9.*;
 import java.util.List;
 
-MQ9Client client = new MQ9Client("nats://localhost:4222");
+MQ9Client client = new MQ9Client("nats://demo.robustmq.com:4222");
 client.connect();
 
 // Create mailbox

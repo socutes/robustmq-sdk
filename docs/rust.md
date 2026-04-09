@@ -18,7 +18,7 @@ use robustmq::mq9::{MQ9Client, Priority};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let client = MQ9Client::connect("nats://localhost:4222").await?;
+    let client = MQ9Client::connect("nats://demo.robustmq.com:4222").await?;
 
     // Create mailbox
     let mailbox = client.create(3600, false, "", "").await?;

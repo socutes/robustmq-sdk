@@ -52,7 +52,7 @@ pip install robustmq
 ```python
 from robustmq.mq9 import Client, Priority
 
-async with Client("nats://localhost:4222") as client:
+async with Client("nats://demo.robustmq.com:4222") as client:
     mailbox = await client.create(ttl=3600)
     await client.send(mailbox.mail_id, b"hello", priority=Priority.NORMAL)
 
@@ -69,7 +69,7 @@ go get github.com/robustmq/robustmq-sdk/go
 ```go
 import "github.com/robustmq/robustmq-sdk/go/mq9"
 
-c := mq9.NewMQ9Client("nats://localhost:4222")
+c := mq9.NewMQ9Client("nats://demo.robustmq.com:4222")
 c.Connect()
 mailbox, _ := c.Create(3600)
 c.Send(mailbox.MailID, []byte("hello"), mq9.Normal)
@@ -82,7 +82,7 @@ npm install @robustmq/sdk
 ```typescript
 import { MQ9Client } from "@robustmq/sdk/mq9";
 
-const client = new MQ9Client({ server: "nats://localhost:4222" });
+const client = new MQ9Client({ server: "nats://demo.robustmq.com:4222" });
 await client.connect();
 const mailbox = await client.create({ ttl: 3600 });
 await client.send(mailbox.mailId, "hello", "normal");
@@ -99,7 +99,7 @@ await client.send(mailbox.mailId, "hello", "normal");
 ```java
 import com.robustmq.mq9.*;
 
-MQ9Client client = new MQ9Client("nats://localhost:4222");
+MQ9Client client = new MQ9Client("nats://demo.robustmq.com:4222");
 client.connect();
 Mailbox mailbox = client.create(3600).get();
 client.send(mailbox.getMailId(), "hello".getBytes(), Priority.NORMAL).get();
@@ -119,7 +119,7 @@ tokio = { version = "1", features = ["full"] }
 ```rust
 use robustmq::mq9::{MQ9Client, Priority};
 
-let client = MQ9Client::connect("nats://localhost:4222").await?;
+let client = MQ9Client::connect("nats://demo.robustmq.com:4222").await?;
 let mailbox = client.create(3600, false, "", "").await?;
 client.send(&mailbox.mail_id, b"hello", Priority::Normal).await?;
 ```
@@ -131,7 +131,7 @@ dotnet add package RobustMQ
 ```csharp
 using RobustMQ.Mq9;
 
-await using var client = new MQ9Client("nats://localhost:4222");
+await using var client = new MQ9Client("nats://demo.robustmq.com:4222");
 await client.ConnectAsync();
 var mailbox = await client.CreateAsync(3600);
 await client.SendAsync(mailbox.MailId, "hello"u8.ToArray(), Priority.Normal);
@@ -154,7 +154,7 @@ await client.SendAsync(mailbox.MailId, "hello"u8.ToArray(), Priority.Normal);
 
 ## Running the demo
 
-Each demo is a standalone project that connects to `nats://localhost:4222` and runs the same scenario:
+Each demo is a standalone project that connects to `nats://demo.robustmq.com:4222` and runs the same scenario:
 1. Create a private mailbox (TTL 60s)
 2. Send 3 messages (high / normal / low priority)
 3. Subscribe and print received messages

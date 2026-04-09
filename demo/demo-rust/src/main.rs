@@ -1,4 +1,4 @@
-// mq9 Rust demo — connects to nats://localhost:4222 and runs the full scenario.
+// mq9 Rust demo — connects to nats://demo.robustmq.com:4222 and runs the full scenario.
 //
 // Run:
 //   cd demo/demo-rust
@@ -9,7 +9,7 @@ use tokio::time::{sleep, Duration};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let client = MQ9Client::connect("nats://localhost:4222").await?;
+    let client = MQ9Client::connect("nats://demo.robustmq.com:4222").await?;
     println!("[rust] connected");
 
     // 1. Create a private mailbox (TTL 60s)

@@ -14,7 +14,7 @@ dotnet add package RobustMQ
 ```csharp
 using RobustMQ.Mq9;
 
-await using var client = new MQ9Client("nats://localhost:4222");
+await using var client = new MQ9Client("nats://demo.robustmq.com:4222");
 await client.ConnectAsync();
 
 // Create mailbox
@@ -39,7 +39,7 @@ await client.DeleteAsync(mailbox.MailId, metas[0].MsgId);
 ## API
 
 ```csharp
-MQ9Client(string server = "nats://localhost:4222")  // IAsyncDisposable
+MQ9Client(string server = "nats://demo.robustmq.com:4222")  // IAsyncDisposable
 
 Task ConnectAsync()
 ValueTask DisposeAsync()
