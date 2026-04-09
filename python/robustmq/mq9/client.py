@@ -322,6 +322,7 @@ class Client:
 # Module-level helpers
 # ------------------------------------------------------------------
 
+
 def _encode_payload(payload: bytes | str | dict[str, Any]) -> bytes:
     if isinstance(payload, bytes):
         return payload
