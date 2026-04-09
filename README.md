@@ -35,12 +35,12 @@ Full spec: [docs/mq9-protocol.md](docs/mq9-protocol.md)
 
 | Language | Package | Version | Install |
 |----------|---------|---------|---------|
-| Python | `robustmq` | 0.3.5 | `pip install robustmq` |
-| Go | `github.com/robustmq/robustmq-sdk/go` | v0.3.5 | `go get github.com/robustmq/robustmq-sdk/go` |
-| JavaScript | `@robustmq/sdk` | 0.3.5 | `npm install @robustmq/sdk` |
-| Java | `com.robustmq:robustmq` | 0.3.5 | Maven / Gradle (see below) |
-| Rust | `robustmq` | 0.3.5 | `cargo add robustmq` |
-| C# | `RobustMQ` | 0.3.5 | `dotnet add package RobustMQ` |
+| Python | `robustmq` | 1.0.1 | `pip install robustmq` |
+| Go | `github.com/robustmq/robustmq-sdk/go` | v1.0.1 | `go get github.com/robustmq/robustmq-sdk/go` |
+| JavaScript | `@robustmq/sdk` | 1.0.1 | `npm install @robustmq/sdk` |
+| Java | `com.robustmq:robustmq` | 1.0.1 | Maven / Gradle (see below) |
+| Rust | `robustmq` | 1.0.1 | `cargo add robustmq` |
+| C# | `RobustMQ` | 1.0.1 | `dotnet add package RobustMQ` |
 
 ### Integrations
 
@@ -100,7 +100,7 @@ await client.send(mailbox.mailId, "hello", "normal");
 <dependency>
   <groupId>com.robustmq</groupId>
   <artifactId>robustmq</artifactId>
-  <version>0.3.5</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 ```java
@@ -114,7 +114,7 @@ client.send(mailbox.getMailId(), "hello".getBytes(), Priority.NORMAL).get();
 
 **Java (Gradle)**
 ```groovy
-implementation 'com.robustmq:robustmq:0.3.5'
+implementation 'com.robustmq:robustmq:1.0.1'
 ```
 
 **Rust**
@@ -262,7 +262,7 @@ demo/
   demo-langchain-mq9/     # langchain-mq9 demo
   demo-multi-agent/       # cross-language multi-agent demo (Python + Go)
   demo-langgraph/         # LangGraph workflow demo
-VERSION                   # Canonical version (currently 0.3.5)
+VERSION                   # Canonical version (currently 1.0.1)
 ```
 
 ---

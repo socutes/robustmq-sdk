@@ -9,7 +9,7 @@
 <dependency>
   <groupId>com.robustmq</groupId>
   <artifactId>robustmq</artifactId>
-  <version>0.3.5</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
