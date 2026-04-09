@@ -7,7 +7,7 @@
 
 ```toml
 [dependencies]
-robustmq = "1.0"
+robustmq = "0.3"
 tokio = { version = "1", features = ["full"] }
 ```
 

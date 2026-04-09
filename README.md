@@ -34,12 +34,12 @@ Full spec: [docs/mq9-protocol.md](docs/mq9-protocol.md)
 
 | Language | Package | Version | Install |
 |----------|---------|---------|---------|
-| Python | `robustmq-mq9` | 1.0.0 | `pip install robustmq-mq9` |
-| Go | `github.com/robustmq/robustmq-sdk/go` | v1.0.0 | `go get github.com/robustmq/robustmq-sdk/go` |
-| JavaScript | `@robustmq/mq9` | 1.0.0 | `npm install @robustmq/mq9` |
-| Java | `com.robustmq:robustmq-sdk` | 1.0.0 | Maven / Gradle (see below) |
-| Rust | `robustmq` | 1.0.0 | `cargo add robustmq` |
-| C# | `RobustMQ.Mq9` | 1.0.0 | `dotnet add package RobustMQ.Mq9` |
+| Python | `robustmq-mq9` | 0.3.5 | `pip install robustmq-mq9` |
+| Go | `github.com/robustmq/robustmq-sdk/go` | v0.3.5 | `go get github.com/robustmq/robustmq-sdk/go` |
+| JavaScript | `@robustmq/mq9` | 0.3.5 | `npm install @robustmq/mq9` |
+| Java | `com.robustmq:robustmq-sdk` | 0.3.5 | Maven / Gradle (see below) |
+| Rust | `robustmq` | 0.3.5 | `cargo add robustmq` |
+| C# | `RobustMQ.Mq9` | 0.3.5 | `dotnet add package RobustMQ.Mq9` |
 
 ---
 
@@ -93,7 +93,7 @@ await client.send(mailbox.mailId, "hello", "normal");
 <dependency>
   <groupId>com.robustmq</groupId>
   <artifactId>robustmq-sdk</artifactId>
-  <version>1.0.0</version>
+  <version>0.3.5</version>
 </dependency>
 ```
 ```java
@@ -107,13 +107,13 @@ client.send(mailbox.getMailId(), "hello".getBytes(), Priority.NORMAL).get();
 
 **Java (Gradle)**
 ```groovy
-implementation 'com.robustmq:robustmq-sdk:1.0.0'
+implementation 'com.robustmq:robustmq-sdk:0.3.5'
 ```
 
 **Rust**
 ```toml
 [dependencies]
-robustmq = "1.0"
+robustmq = "0.3"
 tokio = { version = "1", features = ["full"] }
 ```
 ```rust
@@ -200,7 +200,7 @@ demo/
   demo-java/       # Java standalone demo project (Maven)
   demo-rust/       # Rust standalone demo project
   demo-csharp/     # C# standalone demo project
-VERSION            # Canonical version (currently 1.0.0)
+VERSION            # Canonical version (currently 0.3.5)
 ```
 
 ---
