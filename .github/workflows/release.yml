@@ -185,6 +185,28 @@ jobs:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: mvn --no-transfer-progress deploy -P release
 
+  release-langchain-mq9:
+    needs: prepare
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.tag }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install build tools
+        run: pip install build twine
+      - name: Build
+        working-directory: langchain-mq9
+        run: python -m build
+      - name: Publish to PyPI
+        working-directory: langchain-mq9
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+        run: twine upload dist/*
+
   release-csharp:
     needs: prepare
     runs-on: ubuntu-22.04
@@ -209,7 +231,7 @@ jobs:
 
   # ── Step 3: summary ─────────────────────────────────────────────────────────
   summary:
-    needs: [prepare, release-python, release-rust, release-go, release-javascript, release-java, release-csharp]
+    needs: [prepare, release-python, release-rust, release-go, release-javascript, release-java, release-csharp, release-langchain-mq9]
     runs-on: ubuntu-22.04
     if: always()
     steps:
@@ -227,6 +249,7 @@ jobs:
           | JavaScript | npm | ${{ needs.release-javascript.result }} |
           | Java | Maven Central | ${{ needs.release-java.result }} |
           | C# | NuGet | ${{ needs.release-csharp.result }} |
+          | langchain-mq9 | PyPI | ${{ needs.release-langchain-mq9.result }} |
 
           GitHub Release: https://github.com/${{ github.repository }}/releases/tag/v${VERSION}
           EOF
