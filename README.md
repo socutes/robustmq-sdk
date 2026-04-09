@@ -12,7 +12,7 @@ mq9 gives every agent a durable mailbox. Messages persist until TTL expires — 
 | Concept | Description |
 |---------|-------------|
 | **Mailbox** | Agent's address. Private (UUID) or public (user-defined name). TTL-driven, auto-cleaned. |
-| **Priority** | `high` / `normal` / `low`. Cross-priority ordering guaranteed by storage. |
+| **Priority** | `critical` / `urgent` / `normal` (default, no suffix). Cross-priority ordering guaranteed by storage. |
 | **Store-first** | Subscriber gets all non-expired messages on connect, then real-time going forward. |
 | **Queue group** | Multiple subscribers sharing a group receive each message exactly once. |
 
@@ -21,7 +21,8 @@ mq9 gives every agent a durable mailbox. Messages persist until TTL expires — 
 | Operation | Subject |
 |-----------|---------|
 | Create mailbox | `$mq9.AI.MAILBOX.CREATE` |
-| Send message | `$mq9.AI.MAILBOX.MSG.{mail_id}.{priority}` |
+| Send message (default) | `$mq9.AI.MAILBOX.MSG.{mail_id}` |
+| Send message (urgent/critical) | `$mq9.AI.MAILBOX.MSG.{mail_id}.{priority}` |
 | Subscribe | `$mq9.AI.MAILBOX.MSG.{mail_id}.*` |
 | List metadata | `$mq9.AI.MAILBOX.LIST.{mail_id}` |
 | Delete message | `$mq9.AI.MAILBOX.DELETE.{mail_id}.{msg_id}` |
@@ -201,7 +202,7 @@ Full examples: [demo/demo-langchain-mq9/](demo/demo-langchain-mq9/) · [demo/dem
 
 Each demo is a standalone project that connects to `nats://demo.robustmq.com:4222` and runs the same scenario:
 1. Create a private mailbox (TTL 60s)
-2. Send 3 messages (high / normal / low priority)
+2. Send 3 messages (critical / urgent / normal priority)
 3. Subscribe and print received messages
 4. List mailbox metadata, delete one message
 5. Create a public mailbox
