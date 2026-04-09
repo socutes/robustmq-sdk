@@ -1,12 +1,12 @@
 # Go SDK
 
-**Module:** `github.com/robustmq/robustmq-sdk-go/mq9`  
+**Module:** `github.com/robustmq/robustmq-sdk/go`  
 **Requires:** Go 1.21+, `nats.go`
 
 ## Install
 
 ```bash
-go get github.com/robustmq/robustmq-sdk-go
+go get github.com/robustmq/robustmq-sdk/go
 ```
 
 ## Quick start
@@ -17,7 +17,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/robustmq/robustmq-sdk-go/mq9"
+    "github.com/robustmq/robustmq-sdk/go/mq9"
 )
 
 func main() {
