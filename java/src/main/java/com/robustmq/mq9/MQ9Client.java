@@ -10,7 +10,6 @@ import io.nats.client.Nats;
 import io.nats.client.Options;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Base64;
