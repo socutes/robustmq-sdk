@@ -122,14 +122,11 @@ Payload is arbitrary bytes — the server does not inspect it.
 
 **Receiving messages (subscribe):**
 
-Subscribe to the bare subject for normal messages, or use `.*` wildcard for urgent+critical:
-
 ```
-SUB $mq9.AI.MAILBOX.MSG.m-uuid-001          # normal (default) only
-SUB $mq9.AI.MAILBOX.MSG.m-uuid-001.*        # urgent and critical (excludes default normal)
+SUB $mq9.AI.MAILBOX.MSG.m-uuid-001.*        # all priorities (normal, urgent, critical)
+SUB $mq9.AI.MAILBOX.MSG.m-uuid-001          # normal only (bare subject, no suffix)
 SUB $mq9.AI.MAILBOX.MSG.m-uuid-001.urgent   # urgent only
 SUB $mq9.AI.MAILBOX.MSG.m-uuid-001.critical # critical only
-# To receive all priorities: subscribe to both the bare subject and .*
 ```
 
 Subscription behavior:
