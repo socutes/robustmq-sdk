@@ -13,7 +13,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/robustmq/robustmq-sdk-go/mq9"
+	"github.com/robustmq/robustmq-sdk/go/mq9"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module github.com/robustmq/robustmq-sdk-go
+module github.com/robustmq/robustmq-sdk/go
 
 go 1.22
 
