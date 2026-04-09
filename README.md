@@ -4,7 +4,6 @@ Multi-language client SDK for [RobustMQ](https://github.com/robustmq/robustmq) â
 
 RobustMQ is a single-binary broker that natively supports MQTT, Kafka, NATS, AMQP, and **mq9** on a shared storage layer.
 
----
 
 ## mq9: AI Agent mailbox protocol
 
