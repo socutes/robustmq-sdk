@@ -12,6 +12,7 @@ from robustmq.mq9 import Client, Priority
 
 
 async def main() -> None:
+    # demo.robustmq.com 是公共的 RobustMQ 服务，可用于验证功能和测试，也可修改为自己的服务地址。
     client = Client(server="nats://demo.robustmq.com:4222")
     await client.connect()
     print("[python] connected")
