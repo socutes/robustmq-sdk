@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "robustmq"
 version = "0.3.5"
-description = "RobustMQ Python SDK — mq9 AI-native async messaging"
+description = "RobustMQ Python SDK — unified messaging for AI, IoT, and data pipelines"
 readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.10"
